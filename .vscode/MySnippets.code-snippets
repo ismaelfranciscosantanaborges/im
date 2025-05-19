@@ -1,0 +1,37 @@
+{
+	  "ServiceInterfaceAndImplementation": {
+    "prefix": "myServiceClass",
+    "body": [
+      "abstract class ${1:ClassName}Service {",
+      "  void firstMethod(String name);",
+      "}",
+      "",
+      "class ${1:ClassName}ServiceImpl implements ${1:ClassName}Service {",
+      "  @override",
+      "  void firstMethod(String name) {",
+      "    print('hi!');",
+      "  }",
+      "}"
+    ],
+    "description": "Snippet for abstract service and its implementation with dynamic class name"
+  },
+	"MappableClassSnippet": {
+		"prefix": [
+			"myModelClass",
+			"myEntityClass"
+		],
+		"body": [
+			"import 'package:dart_mappable/dart_mappable.dart';",
+			"",
+			"part '${2:file_name}.mapper.dart';",
+			"",
+			"@MappableClass()",
+			"class ${1:ClassName} with ${1:ClassName}Mappable {",
+			"  ${1:ClassName}({required this.id});",
+			"",
+			"  final String id;",
+			"}"
+		],
+		"description": "Snippet for Mappable class with dynamic class name and file parts"
+	},
+}
